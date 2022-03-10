@@ -1,13 +1,9 @@
-/* This example requires Tailwind CSS v2.0+ */
 const people = [
-    {
-      name: 'Leslie Alexander',
-      role: 'Co-Founder / CEO',
-      imageUrl:
-        'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-    },
-    // More people...
-  ]
+  {"name":"Vaneet Bhagat","role":"Moderator","imageUrl":"https://randomuser.me/api/portraits/thumb/men/12.jpg"},
+  {"name":"Ananya Halder","role":"Event Manager","imageUrl":"https://randomuser.me/api/portraits/thumb/women/28.jpg"},
+  {"name":"Kamala Naik","role":"Mentor","imageUrl":"https://randomuser.me/api/portraits/thumb/women/31.jpg"},
+  {"name":"Jeremy Bowman","role":"Placement Mentor","imageUrl":"https://randomuser.me/api/portraits/thumb/men/51.jpg"},
+  {"name":"Dhruv Narayan","role":"Moderator","imageUrl":"https://randomuser.me/api/portraits/thumb/men/69.jpg"}]
   
   export default function CoreTeam() {
     return (
@@ -15,10 +11,9 @@ const people = [
         <div className="mx-auto py-12 px-4 max-w-7xl sm:px-6 lg:px-8 lg:py-24">
           <div className="grid grid-cols-1 gap-12 lg:grid-cols-3 lg:gap-8">
             <div className="space-y-5 sm:space-y-4">
-              <h2 className="text-3xl font-extrabold tracking-tight sm:text-4xl">Meet our leadership</h2>
+              <h2 className="text-3xl font-extrabold tracking-tight sm:text-4xl">Meet our Core Team</h2>
               <p className="text-xl text-gray-500">
-                Libero fames augue nisl porttitor nisi, quis. Id ac elit odio vitae elementum enim vitae ullamcorper
-                suspendisse. Vivamus fringilla.
+                People who keep peerCodes active and our community healthy
               </p>
             </div>
             <div className="lg:col-span-2">

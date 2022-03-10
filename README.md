@@ -11,6 +11,12 @@ Landing Page Template for Student Discord Community with event management and re
 * Hosted on Firebase Hosting
 ----------
 
+# Other Resources
+
+* Hero Image and Logo : Tailwind
+* randomuser.me : for random name and image genration in Teams Section
+* unsplash.com : for images
+
 # Devlopment and Build
 
 Devlopment Preview 

@@ -14,7 +14,7 @@ const features = [
   },
   { name: 'Events', description: 'Join 100+ events we organise every year.' },
   { name: 'Mock Interviews', description: 'Practice For you interview with mock questions developed by experts.' },
-  { name: 'Topic Boards', description: 'Find what you need with advanced filters, bulk actions, and quick views.' },
+  { name: 'Topic Boards', description: 'Find what you need with different chanels.' },
   { name: 'Hackathons', description: 'Compete in our weekly Hackathons' },
   { name: 'Seminars', description: 'Attended seminars we do in collaboration with companies' },
 ]

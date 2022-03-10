@@ -48,7 +48,7 @@ function classNames(...classes) {
 export default function Hero() {
   useEffect(() => {
     ScrollReveal().reveal('.reveal-300',{ delay: 300 });
-    ScrollReveal().reveal('.reveal-400',{ delay: 400 });
+    ScrollReveal({reset:true}).reveal('.reveal-400',{ delay: 400 });
   }, [])
   return (
     <div className="bg-white">
@@ -127,7 +127,7 @@ export default function Hero() {
               </Popover>
 
               {navigation.map((item) => (
-                <a key={item.name} href={item.href} className="text-base font-medium text-gray-500 hover:text-gray-900">
+                <a key={item.name} href={item.href} className="transition-all text-base font-medium text-gray-500 hover:text-gray-900">
                   {item.name}
                 </a>
               ))}
@@ -245,7 +245,7 @@ hangout and network with smart people
                     <div className="space-y- sm:space-y-0 sm:mx-auto sm:inline-grid sm:grid-cols-1 sm:gap-5">
                       <a
                         href="#"
-                        className="flex items-center justify-center px-4 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-indigo-700 bg-white hover:bg-indigo-50 sm:px-8"
+                        className="transition-all flex items-center justify-center px-4 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-indigo-700 bg-white hover:bg-indigo-50 sm:px-8"
                       >
                         <FaDiscord /> <span className="pl-4 font-bold">Join Our Discord Server</span>
                       </a>

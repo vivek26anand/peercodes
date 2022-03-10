@@ -1,13 +1,5 @@
 /* This example requires Tailwind CSS v2.0+ */
-const people = [
-    {
-      name: 'Michael Foster',
-      role: 'Co-Founder / CTO',
-      imageUrl:
-        'https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80',
-    },
-    // More people...
-  ]
+const people = [{"name":"Brittany Snyder","role":"Coder","imageUrl":"https://randomuser.me/api/portraits/thumb/women/8.jpg"},{"name":"Jorge Carter","role":"Coder","imageUrl":"https://randomuser.me/api/portraits/thumb/men/8.jpg"},{"name":"Ming Heidstra","role":"Coder","imageUrl":"https://randomuser.me/api/portraits/thumb/men/56.jpg"},{"name":"Mathias Schwalbe","role":"Coder","imageUrl":"https://randomuser.me/api/portraits/thumb/men/82.jpg"},{"name":"Victoria Gibson","role":"Coder","imageUrl":"https://randomuser.me/api/portraits/thumb/women/89.jpg"},{"name":"Gabriel Castro","role":"Coder","imageUrl":"https://randomuser.me/api/portraits/thumb/men/22.jpg"},{"name":"Ernest Crawford","role":"Coder","imageUrl":"https://randomuser.me/api/portraits/thumb/men/61.jpg"},{"name":"Múcio Mendes","role":"Coder","imageUrl":"https://randomuser.me/api/portraits/thumb/men/83.jpg"},{"name":"Torbjørn Heggedal","role":"Coder","imageUrl":"https://randomuser.me/api/portraits/thumb/men/86.jpg"},{"name":"Leila Martins","role":"Coder","imageUrl":"https://randomuser.me/api/portraits/thumb/women/53.jpg"},{"name":"Gustav Møller","role":"Coder","imageUrl":"https://randomuser.me/api/portraits/thumb/men/13.jpg"},{"name":"Maeva Martin","role":"Coder","imageUrl":"https://randomuser.me/api/portraits/thumb/women/24.jpg"},{"name":"Tilia Grande","role":"Coder","imageUrl":"https://randomuser.me/api/portraits/thumb/women/88.jpg"},{"name":"Olivia Hopkins","role":"Coder","imageUrl":"https://randomuser.me/api/portraits/thumb/women/89.jpg"},{"name":"Ethan Walker","role":"Coder","imageUrl":"https://randomuser.me/api/portraits/thumb/men/21.jpg"}]
   
   export default function Members() {
     return (
@@ -17,8 +9,7 @@ const people = [
             <div className="space-y-5 sm:mx-auto sm:max-w-xl sm:space-y-4 lg:max-w-5xl">
               <h2 className="text-3xl font-extrabold tracking-tight sm:text-4xl">The People</h2>
               <p className="text-xl text-gray-500">
-                Risus velit condimentum vitae tincidunt tincidunt. Mauris ridiculus fusce amet urna nunc. Ut nisl ornare
-                diam in.
+                Meet some of our exciting members
               </p>
             </div>
             <ul
