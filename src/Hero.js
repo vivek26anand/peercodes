@@ -1,40 +1,44 @@
-import { Fragment } from 'react'
-import { Popover, Transition } from '@headlessui/react'
+import { Fragment } from 'react';
+import { Popover, Transition } from '@headlessui/react';
+import { FaDiscord } from 'react-icons/fa';
 import {
-  AnnotationIcon,
-  ChatAlt2Icon,
-  InboxIcon,
   MenuIcon,
   QuestionMarkCircleIcon,
   XIcon,
+  CalendarIcon,
+  ClockIcon
 } from '@heroicons/react/outline'
 import { ChevronDownIcon } from '@heroicons/react/solid'
 
-const solutions = [
+// import all images from img folder
+const cache = {};
+function importAll(r) {
+    r.keys().forEach((key) => (cache[key] = r(key)));
+}
+importAll(require.context("./logos", false, /\.(png|jpe?g|svg|gif)$/));
+const images = Object.entries(cache).map(module => module[1]);
+console.log(images)
+//
+
+// links for events dropdown
+const events = [
   {
-    name: 'Inbox',
-    description: 'Get a better understanding of where your traffic is coming from.',
+    name: 'Upcoming Events',
+    description: 'View and register for upcomming events',
     href: '#',
-    icon: InboxIcon,
+    icon: CalendarIcon,
   },
   {
-    name: 'Messaging',
-    description: 'Speak directly to your customers in a more meaningful way.',
+    name: 'Past Events',
+    description: 'View Past Events',
     href: '#',
-    icon: AnnotationIcon,
-  },
-  { name: 'Live Chat', description: "Your customers' data will be safe and secure.", href: '#', icon: ChatAlt2Icon },
-  {
-    name: 'Knowledge Base',
-    description: "Connect with third-party tools that you're already using.",
-    href: '#',
-    icon: QuestionMarkCircleIcon,
+    icon: ClockIcon,
   },
 ]
 const navigation = [
-  { name: 'Pricing', href: '#' },
-  { name: 'Partners', href: '#' },
-  { name: 'Company', href: '#' },
+  { name: 'Achievements', href: '#' },
+  { name: 'Team', href: '#' },
+  { name: 'Community', href: '#' },
 ]
 
 function classNames(...classes) {
@@ -48,8 +52,8 @@ export default function Hero() {
         <Popover className="relative bg-white">
           <div className="flex justify-between items-center max-w-7xl mx-auto px-4 py-6 sm:px-6 md:justify-start md:space-x-10 lg:px-8">
             <div className="flex justify-start lg:w-0 lg:flex-1">
-              <a href="#">
-                <span className="sr-only">Workflow</span>
+              <a href="#" className="flex flex-row-reverse items-center">
+                <span className="pl-2 font-bold text-2xl text-indigo-600">peerCodes</span>
                 <img
                   className="h-8 w-auto sm:h-10"
                   src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg"
@@ -73,7 +77,7 @@ export default function Hero() {
                         'group bg-white rounded-md inline-flex items-center text-base font-medium hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500'
                       )}
                     >
-                      <span>Solutions</span>
+                      <span>Events</span>
                       <ChevronDownIcon
                         className={classNames(
                           open ? 'text-gray-600' : 'text-gray-400',
@@ -95,7 +99,7 @@ export default function Hero() {
                       <Popover.Panel className="absolute z-10 -ml-4 mt-3 transform w-screen max-w-md lg:max-w-2xl lg:ml-0 lg:left-1/2 lg:-translate-x-1/2">
                         <div className="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 overflow-hidden">
                           <div className="relative grid gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-8 lg:grid-cols-2">
-                            {solutions.map((item) => (
+                            {events.map((item) => (
                               <a
                                 key={item.name}
                                 href={item.href}
@@ -125,14 +129,11 @@ export default function Hero() {
               ))}
             </Popover.Group>
             <div className="hidden md:flex items-center justify-end md:flex-1 lg:w-0">
-              <a href="#" className="whitespace-nowrap text-base font-medium text-gray-500 hover:text-gray-900">
-                Sign in
-              </a>
               <a
                 href="#"
                 className="ml-8 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700"
               >
-                Sign up
+                Register for Upcoming Events
               </a>
             </div>
           </div>
@@ -169,7 +170,7 @@ export default function Hero() {
                   </div>
                   <div className="mt-6">
                     <nav className="grid grid-cols-1 gap-7">
-                      {solutions.map((item) => (
+                      {events.map((item) => (
                         <a
                           key={item.name}
                           href={item.href}
@@ -201,14 +202,8 @@ export default function Hero() {
                       href="#"
                       className="w-full flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700"
                     >
-                      Sign up
+                      Register for Upcoming Events
                     </a>
-                    <p className="mt-6 text-center text-base font-medium text-gray-500">
-                      Existing customer?
-                      <a href="#" className="text-gray-900">
-                        Sign in
-                      </a>
-                    </p>
                   </div>
                 </div>
               </div>
@@ -234,26 +229,21 @@ export default function Hero() {
                 </div>
                 <div className="relative px-4 py-16 sm:px-6 sm:py-24 lg:py-32 lg:px-8">
                   <h1 className="text-center text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl">
-                    <span className="block text-white">Take control of your</span>
-                    <span className="block text-indigo-200">customer support</span>
+                    <span className="block text-white">Transforming the world through</span>
+                    <span className="block text-indigo-200">Community driven learning</span>
                   </h1>
                   <p className="mt-6 max-w-lg mx-auto text-center text-xl text-indigo-200 sm:max-w-3xl">
-                    Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt
-                    amet fugiat veniam occaecat fugiat aliqua.
+                  Making the world a better
+place, through an interactive community to learn real-life skills from experts, join clubs,
+hangout and network with smart people
                   </p>
                   <div className="mt-10 max-w-sm mx-auto sm:max-w-none sm:flex sm:justify-center">
-                    <div className="space-y-4 sm:space-y-0 sm:mx-auto sm:inline-grid sm:grid-cols-2 sm:gap-5">
+                    <div className="space-y- sm:space-y-0 sm:mx-auto sm:inline-grid sm:grid-cols-1 sm:gap-5">
                       <a
                         href="#"
                         className="flex items-center justify-center px-4 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-indigo-700 bg-white hover:bg-indigo-50 sm:px-8"
                       >
-                        Get started
-                      </a>
-                      <a
-                        href="#"
-                        className="flex items-center justify-center px-4 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-indigo-500 bg-opacity-60 hover:bg-opacity-70 sm:px-8"
-                      >
-                        Live demo
+                        <FaDiscord /> <span className="pl-4 font-bold">Join Our Discord Server</span>
                       </a>
                     </div>
                   </div>
@@ -265,37 +255,15 @@ export default function Hero() {
           {/* Logo cloud */}
           <div className="bg-gray-100">
             <div className="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
-              <p className="text-center text-sm font-semibold uppercase text-gray-500 tracking-wide">
-                Trusted by over 5 very average small businesses
+              <p className="mb-10 text-center text-sm font-semibold uppercase text-gray-500 tracking-wide">
+              Over 10k students from different colleges have joined us
               </p>
-              <div className="mt-6 grid grid-cols-2 gap-8 md:grid-cols-6 lg:grid-cols-5">
+              <div className="mt-6 grid grid-cols-2 gap-8 md:grid-cols-6 lg:grid-cols-6">
+              {images.map(image => (
                 <div className="col-span-1 flex justify-center md:col-span-2 lg:col-span-1">
-                  <img className="h-12" src="https://tailwindui.com/img/logos/tuple-logo-gray-400.svg" alt="Tuple" />
+                <img className="h-12" src={image} alt="" />
                 </div>
-                <div className="col-span-1 flex justify-center md:col-span-2 lg:col-span-1">
-                  <img className="h-12" src="https://tailwindui.com/img/logos/mirage-logo-gray-400.svg" alt="Mirage" />
-                </div>
-                <div className="col-span-1 flex justify-center md:col-span-2 lg:col-span-1">
-                  <img
-                    className="h-12"
-                    src="https://tailwindui.com/img/logos/statickit-logo-gray-400.svg"
-                    alt="StaticKit"
-                  />
-                </div>
-                <div className="col-span-1 flex justify-center md:col-span-2 md:col-start-2 lg:col-span-1">
-                  <img
-                    className="h-12"
-                    src="https://tailwindui.com/img/logos/transistor-logo-gray-400.svg"
-                    alt="Transistor"
-                  />
-                </div>
-                <div className="col-span-2 flex justify-center md:col-span-2 md:col-start-4 lg:col-span-1">
-                  <img
-                    className="h-12"
-                    src="https://tailwindui.com/img/logos/workcation-logo-gray-400.svg"
-                    alt="Workcation"
-                  />
-                </div>
+              ))}
               </div>
             </div>
           </div>
