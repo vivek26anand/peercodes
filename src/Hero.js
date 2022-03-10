@@ -1,9 +1,9 @@
-import { Fragment } from 'react';
+import { Fragment, useEffect } from 'react';
 import { Popover, Transition } from '@headlessui/react';
 import { FaDiscord } from 'react-icons/fa';
+import ScrollReveal from 'scrollreveal';
 import {
   MenuIcon,
-  QuestionMarkCircleIcon,
   XIcon,
   CalendarIcon,
   ClockIcon
@@ -46,9 +46,13 @@ function classNames(...classes) {
 }
 
 export default function Hero() {
+  useEffect(() => {
+    ScrollReveal().reveal('.reveal-300',{ delay: 300 });
+    ScrollReveal().reveal('.reveal-400',{ delay: 400 });
+  }, [])
   return (
     <div className="bg-white">
-      <header>
+      <header className='reveal-300'>
         <Popover className="relative bg-white">
           <div className="flex justify-between items-center max-w-7xl mx-auto px-4 py-6 sm:px-6 md:justify-start md:space-x-10 lg:px-8">
             <div className="flex justify-start lg:w-0 lg:flex-1">
@@ -131,7 +135,7 @@ export default function Hero() {
             <div className="hidden md:flex items-center justify-end md:flex-1 lg:w-0">
               <a
                 href="#"
-                className="ml-8 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700"
+                className="animate-pulse ml-8 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700"
               >
                 Register for Upcoming Events
               </a>
@@ -200,7 +204,7 @@ export default function Hero() {
                   <div className="mt-6">
                     <a
                       href="#"
-                      className="w-full flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700"
+                      className="animate-pulse w-full flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700"
                     >
                       Register for Upcoming Events
                     </a>
@@ -212,7 +216,7 @@ export default function Hero() {
         </Popover>
       </header>
 
-      <main>
+      <main className='reveal-400'>
         <div>
           {/* Hero card */}
           <div className="relative">
@@ -230,7 +234,7 @@ export default function Hero() {
                 <div className="relative px-4 py-16 sm:px-6 sm:py-24 lg:py-32 lg:px-8">
                   <h1 className="text-center text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl">
                     <span className="block text-white">Transforming the world through</span>
-                    <span className="block text-indigo-200">Community driven learning</span>
+                    <span className="block text-indigo-200 animate-pulse">Community driven learning</span>
                   </h1>
                   <p className="mt-6 max-w-lg mx-auto text-center text-xl text-indigo-200 sm:max-w-3xl">
                   Making the world a better
@@ -253,7 +257,7 @@ hangout and network with smart people
           </div>
 
           {/* Logo cloud */}
-          <div className="bg-gray-100">
+          <div className="bg-gray-100 reveal-400">
             <div className="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
               <p className="mb-10 text-center text-sm font-semibold uppercase text-gray-500 tracking-wide">
               Over 10k students from different colleges have joined us

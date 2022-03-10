@@ -14,6 +14,8 @@
   }
   ```
 */
+import { FaDiscord } from 'react-icons/fa';
+
 export default function Cta() {
     return (
       <div className="bg-white">
@@ -23,24 +25,23 @@ export default function Cta() {
               <div className="lg:self-center">
                 <h2 className="text-3xl font-extrabold text-white sm:text-4xl">
                   <span className="block">Ready to dive in?</span>
-                  <span className="block">Start your free trial today.</span>
+                  <span className="block">Join Our Community Today</span>
                 </h2>
                 <p className="mt-4 text-lg leading-6 text-indigo-200">
-                  Ac euismod vel sit maecenas id pellentesque eu sed consectetur. Malesuada adipiscing sagittis vel nulla
-                  nec.
+
                 </p>
                 <a
                   href="#"
-                  className="mt-8 bg-white border border-transparent rounded-md shadow px-5 py-3 inline-flex items-center text-base font-medium text-indigo-600 hover:bg-indigo-50"
+                  className="animate-bounce mt-8 bg-white border border-transparent rounded-md shadow px-5 py-3 inline-flex items-center text-base font-medium text-indigo-600 hover:bg-indigo-50"
                 >
-                  Sign up for free
+                  <FaDiscord /> <span className="pl-4 font-bold">Join Our Discord Server</span>
                 </a>
               </div>
             </div>
             <div className="-mt-6 aspect-w-5 aspect-h-3 md:aspect-w-2 md:aspect-h-1">
               <img
                 className="transform translate-x-6 translate-y-6 rounded-md object-cover object-left-top sm:translate-x-16 lg:translate-y-20"
-                src="https://tailwindui.com/img/component-images/full-width-with-sidebar.jpg"
+                src="https://support.discord.com/hc/article_attachments/360058821551/picture_of_server_discovery_home_page.png"
                 alt="App screenshot"
               />
             </div>
